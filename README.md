@@ -10,7 +10,7 @@ Then, clone the repo and build the project with `cabal build`. It will also inst
 Finally, you can run the program with `cabal run chat-with-paper -- -f /path/to/pdf-file`
 
 ## Example usage
-Let's say that you want to explore [Mistal 7B](https://arxiv.org/abs/2310.06825) paper. It's included in repo as an example pdf.
+Let's say that you want to explore [Mistral 7B](https://arxiv.org/abs/2310.06825) paper. It's included in repo as an example pdf.
 
 Run `cabal run chat-with-paper -- -f mistral-7b.pdf`
 
