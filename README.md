@@ -5,7 +5,7 @@ Chat-with-PDF is a Haskell project that makes it easier to use PDF files. If you
 ## How to use it?
 Firstly, you are going to need `cabal`, a package to manage Haskell projects.
 
-Then, clone the repo and build the project with `cabal build`. It will also install necessary dependencies.
+Then, clone the repo, specify your **API key** in `Config.hs` and build the project with `cabal build`. It will also install necessary dependencies.
 
 Finally, you can run the program with `cabal run chat-with-paper -- -f /path/to/pdf-file`
 
