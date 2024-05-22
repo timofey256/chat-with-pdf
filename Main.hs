@@ -56,6 +56,9 @@ apiResponseContentExtractionPattern = "\"content\":\"([^\"]*)\""
 maybeStringToText :: Maybe String -> T.Text
 maybeStringToText maybeStr = T.pack (fromMaybe failedResponseErrorMessage maybeStr)
 
+replaceNewline :: T.Text -> T.Text
+replaceNewline = T.replace "\\n" "\n"
+
 -- Function to extract the "content" field from the JSON string and trim leading whitespaces
 extractContent :: String -> Maybe String
 extractContent json =
@@ -74,7 +77,7 @@ processUserInput systemPrompt = do
     response <- sendRequest systemPrompt userQuery
     let stringResponse = T.pack $ L8.unpack $ encode $ getResponseBody response
     
-    TIO.putStrLn $ maybeStringToText $ extractContent (T.unpack stringResponse)
+    TIO.putStrLn $ replaceNewline $ maybeStringToText $ extractContent (T.unpack stringResponse)
     putStrLn ""
     
     processUserInput systemPrompt
